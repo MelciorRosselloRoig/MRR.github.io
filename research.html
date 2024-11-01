@@ -172,6 +172,24 @@
     <p>A list of academic and policy publications is available on my <a href='./cvMelcior_Rossello_Roig.pdf'>CV</a>.</p>
   </section>
 
-  <script>
-    // JavaScript code for toggling abstract sections
+    <script>
+      // JavaScript code goes here
+      const abstractToggles = document.querySelectorAll('.abstract-toggle');
+
+      abstractToggles.forEach(toggle => {
+        toggle.addEventListener('click', (event) => {
+          event.preventDefault();
+          const dropdown = toggle.parentElement.nextElementSibling;
+          const isOpen = dropdown.classList.contains('open');
+
+          if (isOpen) {
+            dropdown.classList.remove('open');
+          } else {
+            dropdown.classList.add('open');
+          }
+        });
+      });
+  </script>
+  </body>
+</div>
 

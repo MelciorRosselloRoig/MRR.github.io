@@ -1,0 +1,142 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.no-sidebar .site {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 656px;
+  padding: 54px 90px;
+}
+
+.site {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 656px;
+  padding: 54px 90px;
+  align-items: center;
+  align-content: center;
+}
+
+:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+section {
+  display: block;
+}
+
+.column {
+  float: left;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  overflow: hidden;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  text-align: center;
+  padding: 0px 21px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.dropdown.open {
+  max-height: 800px; /* Adjust the height as needed */
+}
+
+.abstract-toggle {
+  position: relative;
+}
+
+.abstract-toggle::after {
+  content: "[abstract]";
+  display: inline-block;
+  color: goldenrod;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.abstract-toggle.open::after {
+  content: "Hide Abstract";
+}
+
+h1 {
+  color: black;
+  font-family: 'Roboto Slab', serif;
+  font-size: 22px;
+  text-align: center;
+}
+
+h2 {
+  color: black;
+  font-family: 'Roboto Slab', serif;
+  font-size: 24px;
+}
+
+body {
+  padding: 100px 0;
+  background: White;
+  color: DimGrey;
+  font-family: 'Roboto Slab', serif;
+  font-size: 14px;
+  line-height: 1.4;
+  font-smoothing: antialiased;
+}
+
+h3 {
+  color: black;
+  font-family: 'Roboto Slab', serif;
+  font-size: 18px;
+}
+
+h4 {
+  color: black;
+  font-family: 'Roboto Slab', serif;
+  font-size: 14px;
+}
+
+.paper h4 {
+  margin-bottom: 0px; /* Adjust the value as needed */
+}
+
+.paper p {
+  margin-top: 2px;
+  margin-bottom: 8px; /* Adjust the value as needed */
+}
+
+p {
+  font-family: 'Roboto Slab', serif;
+  font-size: 12px;
+}
+
+a {
+  font-family: 'Roboto Slab', serif;
+  /* font format; href hover */
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: goldenrod;
+}
+

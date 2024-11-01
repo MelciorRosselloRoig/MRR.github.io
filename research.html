@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   </head>
 
-    
+   
 <body>
   <header>
     <h2>Research</h2>
@@ -164,23 +164,17 @@
     <p>A list of academic and policy publications is available on my <a href='./cvMelcior_Rossello_Roig.pdf'>CV</a>.</p>
   </section>
 
-    <script>
-      // JavaScript code goes here
-      const abstractToggles = document.querySelectorAll('.abstract-toggle');
+<script>
+  // JavaScript code for single-click toggle on abstract
+  const abstractToggles = document.querySelectorAll('.abstract-toggle');
 
-      abstractToggles.forEach(toggle => {
-        toggle.addEventListener('click', (event) => {
-          event.preventDefault();
-          const dropdown = toggle.parentElement.nextElementSibling;
-          const isOpen = dropdown.classList.contains('open');
-
-          if (isOpen) {
-            dropdown.classList.remove('open');
-          } else {
-            dropdown.classList.add('open');
-          }
-        });
-      });
-  </script>
+  abstractToggles.forEach(toggle => {
+    toggle.addEventListener('click', (event) => { // use 'click' for single-click toggle
+      event.preventDefault();
+      const dropdown = toggle.parentElement.nextElementSibling;
+      dropdown.classList.toggle('open'); // toggles the 'open' class to show/hide
+    });
+  });
+</script>
   </body>
 </div>

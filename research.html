@@ -173,23 +173,17 @@
   </section>
 
     <script>
-      // JavaScript code goes here
       const abstractToggles = document.querySelectorAll('.abstract-toggle');
 
+      // Toggle the 'show' class on each abstract when clicked
       abstractToggles.forEach(toggle => {
         toggle.addEventListener('click', (event) => {
           event.preventDefault();
           const dropdown = toggle.parentElement.nextElementSibling;
-          const isOpen = dropdown.classList.contains('open');
-
-          if (isOpen) {
-            dropdown.classList.remove('open');
-          } else {
-            dropdown.classList.add('open');
-          }
+          dropdown.classList.toggle('show');
         });
       });
-  </script>
+    </script>
   </body>
 </div>
 

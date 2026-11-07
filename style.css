@@ -1,0 +1,173 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --text: #1f1f1f;
+  --muted: #5c5c5c;
+  --line: #e4e1da;
+  --accent: #a87412;
+  --serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --sans: 'Source Sans 3', 'Helvetica Neue', Arial, sans-serif;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: #fdfcf9;
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.site {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px 64px;
+}
+
+a { color: var(--text); text-decoration: none; }
+a:hover { color: var(--accent); }
+
+/* Header and navigation */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid var(--line);
+  padding: 28px 0 14px;
+  margin-bottom: 48px;
+}
+.site-name { font-family: var(--serif); font-size: 19px; }
+.site-nav { display: flex; gap: 24px; font-size: 16px; }
+.site-nav a { color: var(--muted); padding-bottom: 3px; }
+.site-nav a:hover { color: var(--text); }
+.site-nav a[aria-current="page"] { color: var(--text); border-bottom: 2px solid var(--accent); }
+
+/* Home: intro block */
+.intro {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 36px;
+  align-items: center;
+}
+.portrait {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+.intro h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.2;
+  margin: 0 0 4px;
+}
+.role { color: var(--muted); margin: 0 0 18px; }
+
+.links { display: flex; flex-wrap: wrap; gap: 10px; }
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 15px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 5px 12px;
+  background: #fff;
+}
+.links a:hover { border-color: var(--accent); }
+.links svg { width: 16px; height: 16px; flex: none; }
+
+.bio {
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.75;
+  margin: 44px 0 36px;
+}
+
+.themes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.themes div {
+  border-top: 2px solid var(--accent);
+  padding-top: 10px;
+  font-size: 16px;
+}
+
+/* Research page */
+h2.page-title {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 30px;
+  margin: 0 0 8px;
+}
+.section-label {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 32px 0 8px;
+}
+.papers { list-style: none; margin: 0; padding: 0; }
+.paper { border-top: 1px solid var(--line); padding: 20px 0; }
+.paper:last-child { border-bottom: 1px solid var(--line); }
+.paper-title {
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0 0 4px;
+}
+.paper-authors { color: var(--muted); margin: 0; font-size: 16px; }
+.paper-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  align-items: baseline;
+  margin-top: 6px;
+  font-size: 15px;
+}
+.paper-meta em { color: var(--text); }
+.paper-meta a, .abstract-toggle {
+  color: var(--accent);
+  font-size: 15px;
+}
+.abstract-toggle {
+  background: none;
+  border: 0;
+  padding: 0;
+  font-family: inherit;
+  cursor: pointer;
+}
+.abstract-toggle:hover, .paper-meta a:hover { text-decoration: underline; }
+.abstract {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.abstract.open { max-height: 1200px; }
+.abstract p {
+  margin: 12px 0 0;
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .site-header { margin-bottom: 32px; }
+  .intro { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 20px; }
+  .portrait { width: 140px; height: 140px; }
+  .intro h1 { font-size: 28px; }
+  .links { justify-content: center; }
+  .bio { font-size: 17px; margin: 32px 0 28px; }
+  .themes { grid-template-columns: 1fr; gap: 14px; }
+}
